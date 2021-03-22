@@ -2,23 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /*buttons */
 
 .btn {
-    @apply font-bold py-2 px-4 rounded; 
+  @apply font-bold py-2 px-4 rounded text-sm focus:outline-none;
+}
+.btn-select {
+  @apply font-bold py-2 px-4 rounded-2xl text-xs focus:outline-none;
 }
 
 .btn-next-prev {
-    @apply bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-md;
+  @apply bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-md;
 }
 
 .btn-yellow {
-    @apply bg-yellow-400 text-white;
+  @apply bg-yellow-400 text-white;
 }
 
 .btn-yellow:hover {
-    @apply bg-yellow-500; 
+  @apply bg-yellow-500;
 }
 
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
 
+::-webkit-scrollbar-track {
+  background: rgba(63, 178, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(102, 102, 102);
+  border-radius: 1rem;
+}

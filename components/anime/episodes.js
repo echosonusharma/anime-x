@@ -15,41 +15,42 @@ const AnimeEps = ({ animeID }) => {
         data();
     }, [animeID])
 
-    return (
-        <>
-            { eps &&
-                eps.map(ep => {
-                    const { episode_id, title, title_japanese, title_romanji, aired } = ep;
 
-                    return (
-                        <>
-                            <div key={episode_id}>
-                                <div className="flex pb-6 pl-7 ">
-                                    <div className="text-3xl p-5" >
+
+    return (
+        <div className="">
+            {
+                eps.length !== 0 &&
+                <h1 className="text-5xl text-gray-500 pl-16 pb-16">Episodes</h1>
+            }
+            <div className="grid grid-cols-2 gap-4 pb-12 pl-20 ">
+                {
+                    eps?.map(ep => {
+                        const { episode_id, title, title_japanese, title_romanji, aired } = ep;
+
+                        return (
+                            <div key={title} >
+                                <div className="flex items-center pl-7 w-120 border-2 border-gray-300 p-2">
+                                    <div className="text-3xl pr-4" >
                                         <h1>{episode_id}</h1>
                                     </div>
                                     <div>
                                         <h1>{title}</h1>
                                         {
-                                            (title_japanese || title_romanji) &&
+                                            (title_japanese ?? title_romanji) &&
                                             <h1>{`${title_japanese}  (${title_romanji})`}</h1>
 
                                         }
-
-                                        {
-                                            aired &&
-                                            <h1>{aired.slice(0, -15)}</h1>
-                                        }
-
+                                        <h1>{aired?.slice(0, -15)}</h1>
                                     </div>
                                 </div>
                             </div>
-                        </>
-                    )
-                })
+                        )
+                    })
 
-            }
-        </>
+                }
+            </div>
+        </div>
     )
 };
 

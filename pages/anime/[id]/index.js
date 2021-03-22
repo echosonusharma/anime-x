@@ -7,8 +7,11 @@ const AnimePage = ({ animeInfo }) => {
         <>
             <Anime animeInfo={animeInfo} />
 
-            <div className="pl-16 pb-24">
-                <Link href='/'>Go Back</Link>
+            <div className="p-10 pl-16">
+                <button className="btn btn-yellow">  <Link href='/' >
+                    Go Back
+                </Link>
+                </button>
             </div>
 
         </>
