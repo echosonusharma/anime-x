@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AnimeList from "./anime-list/anime-list-item";
-import NextPrev from "./anime-list/next-prev-btn";
 import SearchOptions from "./anime-list/search-category";
+import SearchInput from "./anime-list/search-input";
 
 const AnimeHomepage = () => {
 
@@ -26,7 +26,9 @@ const AnimeHomepage = () => {
 
     useEffect(() => {
         const getAnime = async () => {
-            const x = await fetch(URL);
+            const x = await fetch(URL, {
+                header: 'Access-Control-Allow-Origin: *'
+            });
             const res = await x.json();
             setAnime(res);
         }
@@ -36,19 +38,14 @@ const AnimeHomepage = () => {
     }, [URL]);
 
 
-
-
-
-
-
     return (
         <main >
             <div className="flex">
                 <div className="fixed z-10 bg-white w-full">
-                    <NextPrev setPage={setPage} prev={prev} />
+                    <SearchInput />
                     <SearchOptions setOptions={setOptions} setPage={setPage} setChangeURL={setChangeURL} />
                 </div>
-                <AnimeList anime={anime.top} />
+                <AnimeList anime={anime.top} setPage={setPage} prev={prev} />
             </div>
         </main>
     )

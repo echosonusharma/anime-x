@@ -3,7 +3,9 @@ import React, { useEffect, useState } from "react";
 const AnimeCharacters = ({ animeID }) => {
     const [char, setChar] = useState([])
     const data = async () => {
-        const res = await fetch(`https://api.jikan.moe/v3/anime/${animeID}/characters_staff`);
+        const res = await fetch(`https://api.jikan.moe/v3/anime/${animeID}/characters_staff`, {
+            header: 'Access-Control-Allow-Origin: *'
+        });
         const animeChar = await res.json();
         setChar(animeChar.characters);
     };
@@ -11,9 +13,6 @@ const AnimeCharacters = ({ animeID }) => {
     useEffect(() => {
         data();
     }, [animeID])
-
-
-    console.log(char)
 
 
     return (
@@ -29,9 +28,9 @@ const AnimeCharacters = ({ animeID }) => {
                         return (
                             <div key={mal_id} className="p-2">
                                 <div className="w-80 ">
-                                    <img src={image_url} width="170px" />
+                                    <img src={image_url} width="170px" className="rounded-md" />
                                 </div>
-                                <h1>{name}</h1>
+                                <h1>{name.split(/\s/).reverse().join(" ").replace(",", '')}</h1>
                                 <h1>Role: {role}</h1>
                             </div>
                         )

@@ -2,6 +2,8 @@ import AnimeCharacters from "./anime/characters";
 import AnimeEps from "./anime/episodes";
 import AnimeRecommendations from "./anime/recommendations";
 import Stats from "./anime/stats";
+import Link from 'next/link';
+import Reviews from "./anime/reviews";
 
 
 const Anime = ({ animeInfo }) => {
@@ -13,12 +15,14 @@ const Anime = ({ animeInfo }) => {
                 <div>
                     <img src={image_url} width="250px" />
                 </div>
-                <div className="flex gap-20">
+                <div className="flex gap-5">
                     <div>
-                        <h1>{title}</h1>
-                        <h2>{title_japanese}</h2>
-                        <div className="pt-5">
-                            <h1>score: {score}</h1>
+                        <div className="flex gap-2">
+                            <h1 className="text-xl text-gray-700">{title}</h1>
+                            <h2 className="text-lg text-gray-700">{title_japanese}</h2>
+                        </div>
+                        <div className="btn w-16 text-center bg-violet-light opacity-90 text-white h-10 absolute top-56 left-44">
+                            <h1 className="text-lg">{score}</h1>
                         </div>
                         <div className="pt-7">
                             <div>
@@ -50,9 +54,9 @@ const Anime = ({ animeInfo }) => {
                         genres?.map(item => {
                             const { mal_id, name } = item;
                             return (
-                                <div key={mal_id}>
-                                    <h1 className="btn-select btn-yellow">{name}</h1>
-                                </div>
+                                <Link href="/genre/[id]" as={`/genre/${mal_id}`} key={mal_id} >
+                                    <h1 className="btn-select btn-yellow cursor-pointer">{name}</h1>
+                                </Link>
                             )
                         })
 
@@ -67,6 +71,7 @@ const Anime = ({ animeInfo }) => {
             <AnimeCharacters animeID={mal_id} />
             <AnimeEps animeID={mal_id} />
             <AnimeRecommendations animeID={mal_id} />
+            <Reviews animeID={mal_id} />
         </>
     )
 };

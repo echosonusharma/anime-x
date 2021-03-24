@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Bar } from 'react-chartjs-2';
-// import useFetch from '../../hooks/useFetch';
 
 const Stats = ({ animeID }) => {
     const [stats, setStats] = useState({});
 
     const data = async () => {
-        const res = await fetch(`https://api.jikan.moe/v3/anime/${animeID}/stats`);
+        const res = await fetch(`https://api.jikan.moe/v3/anime/${animeID}/stats`, {
+            header: 'Access-Control-Allow-Origin: *'
+        });
         const animeStats = await res.json();
         setStats(animeStats.scores);
     };

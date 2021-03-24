@@ -16,11 +16,11 @@
 }
 
 .btn-yellow {
-  @apply bg-yellow-400 text-white;
+  @apply bg-indigo-400 text-white;
 }
 
 .btn-yellow:hover {
-  @apply bg-yellow-500;
+  @apply bg-indigo-500;
 }
 
 ::-webkit-scrollbar {

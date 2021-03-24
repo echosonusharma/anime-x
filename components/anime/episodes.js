@@ -5,7 +5,9 @@ const AnimeEps = ({ animeID }) => {
     const [eps, setEps] = useState([])
 
     const data = async () => {
-        const res = await fetch(`https://api.jikan.moe/v3/anime/${animeID}/episodes`)
+        const res = await fetch(`https://api.jikan.moe/v3/anime/${animeID}/episodes`, {
+            header: 'Access-Control-Allow-Origin: *'
+        })
         const animeEpisodes = await res.json()
         setEps(animeEpisodes.episodes)
 
@@ -18,7 +20,7 @@ const AnimeEps = ({ animeID }) => {
 
 
     return (
-        <div className="">
+        <div className="w-2/3">
             {
                 eps.length !== 0 &&
                 <h1 className="text-5xl text-gray-500 pl-16 pb-16">Episodes</h1>
@@ -30,7 +32,7 @@ const AnimeEps = ({ animeID }) => {
 
                         return (
                             <div key={title} >
-                                <div className="flex items-center pl-7 w-120 border-2 border-gray-300 p-2">
+                                <div className="flex items-center pl-7 w-120 rounded-lg bg-indigo-100  p-2">
                                     <div className="text-3xl pr-4" >
                                         <h1>{episode_id}</h1>
                                     </div>

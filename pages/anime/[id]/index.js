@@ -6,7 +6,6 @@ const AnimePage = ({ animeInfo }) => {
     return (
         <>
             <Anime animeInfo={animeInfo} />
-
             <div className="p-10 pl-16">
                 <button className="btn btn-yellow">  <Link href='/' >
                     Go Back
@@ -22,7 +21,9 @@ export default AnimePage;
 
 
 export const getServerSideProps = async (context) => {
-    const res = await fetch(`https://api.jikan.moe/v3/anime/${context.params.id}`)
+    const res = await fetch(`https://api.jikan.moe/v3/anime/${context.params.id}`, {
+        mode: 'no-cors'
+    })
     const animeInfo = await res.json()
 
     return {
