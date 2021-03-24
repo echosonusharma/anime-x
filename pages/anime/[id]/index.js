@@ -5,14 +5,13 @@ const AnimePage = ({ animeInfo }) => {
 
     return (
         <>
-            <Anime animeInfo={animeInfo} />
-            <div className="p-10 pl-16">
-                <button className="btn btn-yellow">  <Link href='/' >
-                    Go Back
-                </Link>
+            <div className="pl-16 pt-5">
+                <button className="btn bg-indigo-900 text-white">
+                    <Link href='/' className="p-10">
+                        Home </Link>
                 </button>
             </div>
-
+            <Anime animeInfo={animeInfo} />
         </>
     )
 };

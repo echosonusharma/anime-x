@@ -50,7 +50,19 @@ const Stats = ({ animeID }) => {
                     '#37FF0F',
                     '#0EEB1A'
                 ],
-                borderWidth: 1
+                backgroundBorderColor: [
+                    '#FF2500',
+                    '#EB2000',
+                    '#FF0101',
+                    '#FF000C',
+                    '#FFB300',
+                    '#FFD300',
+                    '#FFF700',
+                    '#A6FF0F',
+                    '#37FF0F',
+                    '#0EEB1A'
+                ],
+                borderWidth: 5
             }
         ]
     }
@@ -72,8 +84,8 @@ const Stats = ({ animeID }) => {
                         autoSkip: true,
                         maxTicksLimit: 10,
                         beginAtZero: true,
-                        callback: function (value) {
-                            return value + '%';
+                        callback: function (v) {
+                            return v + '%';
                         }
 
                     },
@@ -95,14 +107,10 @@ const Stats = ({ animeID }) => {
 
 
     return (
-        <div className="flex justify-center p-20">
-            <div>
-                <div className="w-132">
-                    <Bar
-                        data={chart}
-                        options={chartsOptions} />
-                </div>
-            </div>
+        <div className="w-5/12 bg-indigo-50 p-5 rounded-xl flex justify-center items-center">
+            <Bar
+                data={chart}
+                options={chartsOptions} />
         </div>
     )
 };

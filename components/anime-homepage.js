@@ -40,13 +40,13 @@ const AnimeHomepage = () => {
 
     return (
         <main >
-            <div className="flex">
-                <div className="fixed z-10 bg-white w-full">
+            <div className="fixed z-10 bg-white w-full">
+                <div className="flex flex-col justify-center items-center">
                     <SearchInput />
                     <SearchOptions setOptions={setOptions} setPage={setPage} setChangeURL={setChangeURL} />
                 </div>
-                <AnimeList anime={anime.top} setPage={setPage} prev={prev} />
             </div>
+            <AnimeList anime={anime.top} setPage={setPage} prev={prev} />
         </main>
     )
 };

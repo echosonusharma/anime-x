@@ -20,12 +20,12 @@ const AnimeEps = ({ animeID }) => {
 
 
     return (
-        <div className="w-2/3">
+        <div className="w-full">
             {
                 eps.length !== 0 &&
-                <h1 className="text-5xl text-gray-500 pl-16 pb-16">Episodes</h1>
+                <h1 className="text-4xl text-gray-500 pl-16 pb-16">Episodes</h1>
             }
-            <div className="grid grid-cols-2 gap-4 pb-12 pl-20 ">
+            <div className="grid grid-cols-3 gap-4 pb-12 pl-20 ">
                 {
                     eps?.map(ep => {
                         const { episode_id, title, title_japanese, title_romanji, aired } = ep;
