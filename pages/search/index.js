@@ -48,7 +48,7 @@ const AnimeSearch = () => {
                                                     <h4>Aired : {start_date?.slice(0, -15)} to {end_date?.slice(0, -15)}</h4>
 
                                                 }
-                                                <h3 className=" btn  w-16 text-center bg-indigo-400 text-white h-10 my-3">{score}</h3>
+                                                <h3 className=" btn  w-16 text-center bg-purple-600 text-white h-10 my-3">{score}</h3>
                                                 <div className="w-48 pt-3">
                                                     <p className="text-xs">{synopsis}</p>
                                                 </div>

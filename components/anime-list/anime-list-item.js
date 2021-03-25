@@ -15,7 +15,7 @@ const AnimeList = ({ anime, setPage, prev }) => {
                                     <div className="bg-gray-200 rounded shadow-lg p-4 mb-8 w-132 cursor-pointer" >
                                         <div className="flex relative">
                                             <img src={image_url} alt={title} width="200px" className="rounded-lg" />
-                                            <h3 className=" btn w-16 text-center bg-indigo-400 text-white h-10 absolute top-56 left-44 cursor-default">{score}</h3>
+                                            <h3 className=" btn w-16 text-center bg-purple-600 text-white h-10 absolute top-56 left-44 cursor-default">{score}</h3>
                                             <div className="pl-10">
                                                 <h2 className="text-2xl pb-5">{title}</h2>
                                                 <h2>Episodes : {episodes}</h2>

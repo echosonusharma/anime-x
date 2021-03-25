@@ -26,7 +26,7 @@ const index = ({ genreRes }) => {
                                                 <h2 className="text-2xl pb-5">{title}</h2>
                                                 <h2>Episodes : {episodes}</h2>
                                                 <h4>Aired : {airing_start?.slice(0, -15)} </h4>
-                                                <h3 className=" btn  w-16 text-center bg-indigo-400 text-white h-10 my-4">{score}</h3>
+                                                <h3 className=" btn  w-16 text-center bg-purple-600 text-white h-10 my-4">{score}</h3>
                                                 <div className="w-60 pt-4">
                                                     <p className="text-xs">{synopsis.slice(0, 180)}...</p>
                                                 </div>

@@ -18,15 +18,15 @@ const Anime = ({ animeInfo }) => {
                         <div className="pl-10 py-10">
                             <img src={image_url} width="250px" className="rounded-lg" />
                         </div>
-                        <div className="text-gray-600 text-lg pt-20">
+                        <div className="text-gray-600 text-lg pt-10">
                             <div className="flex flex-col gap-2">
                                 <h1 className="text-2xl text-gray-700 font-semibold">{title}</h1>
                                 <h2 className="text-lg text-gray-700">{title_japanese}</h2>
                             </div>
-                            <div className="btn w-16 text-center bg-violet-light opacity-90 text-white h-10 absolute top-56 left-44">
+                            <div className="btn w-16 text-center bg-purple-600 mt-1 text-white">
                                 <h1 className="text-lg">{score}</h1>
                             </div>
-                            <div className="pt-7">
+                            <div className="pt-4">
                                 <div className="flex gap-20 ">
                                     <div>
                                         {
