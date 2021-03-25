@@ -1,27 +1,30 @@
 import React, { useEffect, useState } from "react";
 
 const AnimeCharacters = ({ animeID }) => {
-    const [char, setChar] = useState([])
+    const [char, setChar] = useState(null);
     const data = async () => {
-        const res = await fetch(`https://api.jikan.moe/v3/anime/${animeID}/characters_staff`);
+        const res = await fetch(`/api/character/${animeID}`);
         const animeChar = await res.json();
         setChar(animeChar.characters);
     };
 
-    useEffect(() => {
-        data();
-    }, [animeID])
+    useEffect(async () => {
+        await data();
+    }, [animeID]);
+
+
 
 
     return (
         <div className="py-24 ">
             {
-                char.length !== 0 &&
+                char?.length !== 0 &&
                 <h1 className="text-4xl text-gray-500 pb-5 pl-1">Characters</h1>
             }
             <div className="flex overflow-auto w-full px-20">
                 {
-                    char?.map(item => {
+                    char &&
+                    char.map(item => {
                         const { mal_id, image_url, name, role } = item;
                         return (
                             <div key={mal_id} >

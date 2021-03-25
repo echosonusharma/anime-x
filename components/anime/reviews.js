@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 
+
 const Reviews = ({ animeID }) => {
 
-    const [rew, setRew] = useState([])
+    const [rew, setRew] = useState(null);
 
     const data = async () => {
         const response = await fetch(`/api/reviews/${animeID}`);
@@ -11,8 +12,8 @@ const Reviews = ({ animeID }) => {
 
     };
 
-    useEffect(() => {
-        data();
+    useEffect(async () => {
+        await data();
     }, [animeID]);
 
     function ReadMore({ children }) {
@@ -35,12 +36,12 @@ const Reviews = ({ animeID }) => {
 
     return (
         <div className="py-11">
-            {
-                rew.length !== 0 &&
+            { rew &&
+                (rew.length !== 0) &&
                 <h1 className="text-4xl text-gray-500 pb-14">Reviews</h1>
             }
-            {
-                rew?.map(item => {
+            { rew &&
+                rew.map(item => {
                     const { mal_id, date, reviewer, content } = item;
                     return (
                         <div key={mal_id} className=" rounded-lg bg-indigo-100  p-4 mb-10 w-full">

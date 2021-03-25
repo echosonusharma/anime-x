@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 const AnimeEps = ({ animeID }) => {
 
-    const [eps, setEps] = useState([])
+    const [eps, setEps] = useState(null)
 
     const data = async () => {
         const res = await fetch(`/api/episodes/${animeID}`)
@@ -11,21 +11,22 @@ const AnimeEps = ({ animeID }) => {
 
     };
 
-    useEffect(() => {
-        data();
-    }, [animeID])
+    useEffect(async () => {
+        await data();
+    }, [animeID]);
+
 
 
 
     return (
         <div className="w-full">
-            {
+            {eps &&
                 eps.length !== 0 &&
                 <h1 className="text-4xl text-gray-500  pb-16">Episodes</h1>
             }
             <div className="grid grid-cols-3 gap-4 pb-12  ">
-                {
-                    eps?.map(ep => {
+                {eps &&
+                    eps.map(ep => {
                         const { episode_id, title, title_japanese, title_romanji, aired } = ep;
 
                         return (

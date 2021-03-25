@@ -5,7 +5,7 @@ const Stats = ({ animeID }) => {
     const [stats, setStats] = useState({});
 
     const data = async () => {
-        const res = await fetch(`https://api.jikan.moe/v3/anime/${animeID}/stats`);
+        const res = await fetch(`/api/stats/${animeID}`);
         const animeStats = await res.json();
         setStats(animeStats.scores);
     };
@@ -20,9 +20,10 @@ const Stats = ({ animeID }) => {
         });
     }
     val();
-    useEffect(() => {
-        data();
-    }, [animeID])
+    useEffect(async () => {
+        await data();
+    }, [animeID]);
+
 
 
 

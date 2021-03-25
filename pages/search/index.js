@@ -1,23 +1,26 @@
 import React, { useState, useEffect } from "react";
 import useStore from '../../store/store';
 import Link from 'next/link';
+import useFetch from '../../hooks/useFetch'
 
 const AnimeSearch = () => {
 
     const input = useStore(state => state.input);
 
-    const [search, setSearch] = useState([]);
+    // const [search, setSearch] = useState([]);
 
-    const data = async () => {
-        const res = await fetch(`https://api.jikan.moe/v3/search/anime?q=${input}&page=1`)
-        const searchRes = await res.json()
-        setSearch(searchRes.results)
+    // const data = async () => {
+    //     const res = await fetch(`https://api.jikan.moe/v3/search/anime?q=${input}&page=1`)
+    //     const searchRes = await res.json()
+    //     setSearch(searchRes.results)
 
-    };
+    // };
 
-    useEffect(() => {
-        data();
-    }, [])
+    // useEffect(() => {
+    //     data();
+    // }, [])
+
+    const { data, loading } = useFetch(`https://api.jikan.moe/v3/search/anime?q=${input}&page=1`)
 
     return (
         <>
@@ -30,7 +33,7 @@ const AnimeSearch = () => {
             <div className="flex justify-center w-full pt-10">
                 <div className="grid grid-cols-2 gap-4 " >
                     {
-                        search?.map((items) => {
+                        data.results?.map((items) => {
                             const { mal_id, synopsis, title, image_url, episodes, start_date, end_date, score } = items;
                             return (
                                 <Link href="anime/[id]" as={`/anime/${mal_id}`} key={mal_id} >
