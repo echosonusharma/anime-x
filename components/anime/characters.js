@@ -14,7 +14,7 @@ const AnimeCharacters = ({ animeID }) => {
 
 
     return (
-        <div className="py-24 px-14">
+        <div className="py-24 ">
             {
                 char.length !== 0 &&
                 <h1 className="text-4xl text-gray-500 pb-5 pl-1">Characters</h1>
@@ -28,8 +28,8 @@ const AnimeCharacters = ({ animeID }) => {
                                 <div className="w-64">
                                     <img src={image_url} width="170px" className="rounded-md" />
                                 </div>
-                                <h1 className='py-1'>{name.split(/\s/).reverse().join(" ").replace(",", '')}</h1>
-                                <h1 className="pb-2">Role: {role}</h1>
+                                <h1 className='py-1 text-lg font-medium text-gray-700'>{name.split(/\s/).reverse().join(" ").replace(",", '')}</h1>
+                                <h1 className="pb-2 text-lg">Role: {role}</h1>
                             </div>
                         )
                     })

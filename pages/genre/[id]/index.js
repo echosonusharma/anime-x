@@ -5,7 +5,7 @@ const index = ({ genreRes }) => {
     return (
         <>
             <div className="p-10 pl-16">
-                <button className="btn bg-indigo-900">  <Link href='/' className="p-10">
+                <button className="btn bg-indigo-800 text-white">  <Link href='/' className="p-10">
                     Home
                 </Link>
                 </button>
@@ -24,9 +24,9 @@ const index = ({ genreRes }) => {
                                             </div>
                                             <div className="pl-10">
                                                 <h2 className="text-2xl pb-5">{title}</h2>
-                                                <h3 className=" btn  w-16 text-center bg-indigo-400 text-white h-10 mb-6">{score}</h3>
                                                 <h2>Episodes : {episodes}</h2>
                                                 <h4>Aired : {airing_start?.slice(0, -15)} </h4>
+                                                <h3 className=" btn  w-16 text-center bg-indigo-400 text-white h-10 my-4">{score}</h3>
                                                 <div className="w-60 pt-4">
                                                     <p className="text-xs">{synopsis.slice(0, 180)}...</p>
                                                 </div>

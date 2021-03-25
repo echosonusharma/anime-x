@@ -7,7 +7,7 @@ const AnimeRecommendations = ({ animeID }) => {
     const [rec, setRec] = useState([])
 
     const data = async () => {
-        const res = await fetch(`https://api.jikan.moe/v3/anime/${animeID}/recommendations`);
+        const res = await fetch(`/api/recommendations/${animeID}`);
         const animeRec = await res.json();
         setRec(animeRec.recommendations);
     };
@@ -17,13 +17,13 @@ const AnimeRecommendations = ({ animeID }) => {
     }, [animeID])
 
     return (
-        <div className="pb-24 px-14">
+        <div className="pb-24">
             {
                 rec.length !== 0 &&
-                <h1 className="text-4xl text-gray-500 pb-20 pl-1">Recommendations</h1>
+                <h1 className="text-4xl text-gray-500 pb-20">Recommendations</h1>
             }
 
-            <div className="flex overflow-auto  w-full pr-20">
+            <div className="flex overflow-auto w-full pr-20">
                 {
                     rec?.map(item => {
                         const { image_url, title, mal_id } = item;

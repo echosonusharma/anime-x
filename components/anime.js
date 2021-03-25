@@ -73,15 +73,16 @@ const Anime = ({ animeInfo }) => {
                 </div>
             </div>
 
-            <div className="w-4/5 py-16 pl-16">
+            <div className="w-4/5 py-16 mx-32">
                 <h1 className="text-3xl text-gray-500 pb-5">Synopsis</h1>
                 <p className="pl-4">{synopsis}</p>
             </div>
-
-            <AnimeCharacters animeID={mal_id} />
-            <AnimeEps animeID={mal_id} />
-            <AnimeRecommendations animeID={mal_id} />
-            <Reviews animeID={mal_id} />
+            <div className="mx-32">
+                <AnimeCharacters animeID={mal_id} />
+                <AnimeEps animeID={mal_id} />
+                <AnimeRecommendations animeID={mal_id} />
+                <Reviews animeID={mal_id} />
+            </div>
         </div>
     )
 };

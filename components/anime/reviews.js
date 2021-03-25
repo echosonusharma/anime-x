@@ -37,13 +37,13 @@ const Reviews = ({ animeID }) => {
         <div className="py-11">
             {
                 rew.length !== 0 &&
-                <h1 className="text-4xl text-gray-500 pl-14 pb-14">Reviews</h1>
+                <h1 className="text-4xl text-gray-500 pb-14">Reviews</h1>
             }
             {
                 rew?.map(item => {
                     const { mal_id, date, reviewer, content } = item;
                     return (
-                        <div key={mal_id} className="ml-20 rounded-lg bg-indigo-100  p-4 mb-10 w-11/12">
+                        <div key={mal_id} className=" rounded-lg bg-indigo-100  p-4 mb-10 w-full">
                             <div className="flex gap-4 items-center">
                                 <img
                                     className="rounded-full w-28 h-28 p-3 object-cover"

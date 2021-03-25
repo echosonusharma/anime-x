@@ -5,7 +5,7 @@ const AnimeEps = ({ animeID }) => {
     const [eps, setEps] = useState([])
 
     const data = async () => {
-        const res = await fetch(`https://api.jikan.moe/v3/anime/${animeID}/episodes`)
+        const res = await fetch(`/api/episodes/${animeID}`)
         const animeEpisodes = await res.json()
         setEps(animeEpisodes.episodes)
 
@@ -21,9 +21,9 @@ const AnimeEps = ({ animeID }) => {
         <div className="w-full">
             {
                 eps.length !== 0 &&
-                <h1 className="text-4xl text-gray-500 pl-16 pb-16">Episodes</h1>
+                <h1 className="text-4xl text-gray-500  pb-16">Episodes</h1>
             }
-            <div className="grid grid-cols-3 gap-4 pb-12 pl-20 ">
+            <div className="grid grid-cols-3 gap-4 pb-12  ">
                 {
                     eps?.map(ep => {
                         const { episode_id, title, title_japanese, title_romanji, aired } = ep;
