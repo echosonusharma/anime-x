@@ -5,9 +5,7 @@ const AnimeEps = ({ animeID }) => {
     const [eps, setEps] = useState([])
 
     const data = async () => {
-        const res = await fetch(`https://api.jikan.moe/v3/anime/${animeID}/episodes`, {
-            header: 'Access-Control-Allow-Origin: *'
-        })
+        const res = await fetch(`https://api.jikan.moe/v3/anime/${animeID}/episodes`)
         const animeEpisodes = await res.json()
         setEps(animeEpisodes.episodes)
 

@@ -7,11 +7,9 @@ const AnimeRecommendations = ({ animeID }) => {
     const [rec, setRec] = useState([])
 
     const data = async () => {
-        const res = await fetch(`https://cors-anywhere.herokuapp.com/https://api.jikan.moe/v3/anime/${animeID}/recommendations`, {
-            header: 'Access-Control-Allow-Origin: *'
-        })
-        const animeRec = await res.json()
-        setRec(animeRec.recommendations)
+        const res = await fetch(`https://api.jikan.moe/v3/anime/${animeID}/recommendations`);
+        const animeRec = await res.json();
+        setRec(animeRec.recommendations);
     };
 
     useEffect(() => {

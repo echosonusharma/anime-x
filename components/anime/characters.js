@@ -3,9 +3,7 @@ import React, { useEffect, useState } from "react";
 const AnimeCharacters = ({ animeID }) => {
     const [char, setChar] = useState([])
     const data = async () => {
-        const res = await fetch(`https://cors-anywhere.herokuapp.com/https://api.jikan.moe/v3/anime/${animeID}/characters_staff`, {
-            header: 'Access-Control-Allow-Origin: *'
-        });
+        const res = await fetch(`https://api.jikan.moe/v3/anime/${animeID}/characters_staff`);
         const animeChar = await res.json();
         setChar(animeChar.characters);
     };

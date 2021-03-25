@@ -3,11 +3,13 @@ import AnimeList from "./anime-list/anime-list-item";
 import SearchOptions from "./anime-list/search-category";
 import SearchInput from "./anime-list/search-input";
 
+import useFetch from '../hooks/useFetch'
+
 const AnimeHomepage = () => {
 
     const [options, setOptions] = useState('bypopularity');
     const [page, setPage] = useState(1);
-    const [anime, setAnime] = useState([]);
+    // const [anime, setAnime] = useState([]);
 
 
 
@@ -24,18 +26,20 @@ const AnimeHomepage = () => {
     changeURL ? URL = baseURL + optionsURl : URL = baseURL;
 
 
-    useEffect(() => {
-        const getAnime = async () => {
-            const x = await fetch(URL, {
-                header: 'Access-Control-Allow-Origin: *'
-            });
-            const res = await x.json();
-            setAnime(res);
-        }
+    // useEffect(() => {
+    //     // const getAnime = async () => {
+    //     //     const x = await fetch(URL, {
+    //     //         header: 'Access-Control-Allow-Origin: *'
+    //     //     });
+    //     //     const res = await x.json();
+    //     //     setAnime(res);
+    //     // }
 
-        getAnime();
+    //     getAnime();
 
-    }, [URL]);
+    // }, [URL]);
+
+    const { data, loading } = useFetch(URL);
 
 
     return (
@@ -46,7 +50,7 @@ const AnimeHomepage = () => {
                     <SearchOptions setOptions={setOptions} setPage={setPage} setChangeURL={setChangeURL} />
                 </div>
             </div>
-            <AnimeList anime={anime.top} setPage={setPage} prev={prev} />
+            <AnimeList anime={data?.top} setPage={setPage} prev={prev} />
         </main>
     )
 };

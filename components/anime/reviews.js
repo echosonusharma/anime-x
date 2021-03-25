@@ -5,7 +5,7 @@ const Reviews = ({ animeID }) => {
     const [rew, setRew] = useState([])
 
     const data = async () => {
-        const response = await fetch(`https://cors-anywhere.herokuapp.com/https://api.jikan.moe/v3/anime/${animeID}/reviews`);
+        const response = await fetch(`/api/reviews/${animeID}`);
         const animeRew = await response.json();
         setRew(animeRew.reviews);
 
@@ -27,7 +27,7 @@ const Reviews = ({ animeID }) => {
                 <span
                     className="text-blue-700 cursor-pointer"
                     onClick={() => setIsTruncated(!isTruncated)}>
-                    {isTruncated ? "...Read more" : "Read less"}</span >
+                    {isTruncated ? " ...Read more" : " Read less"}</span >
             </div>
         )
     }
