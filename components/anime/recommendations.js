@@ -30,7 +30,7 @@ const AnimeRecommendations = ({ animeID }) => {
                         const { image_url, title, mal_id } = item;
                         return (
                             <Link href="[id]" as={`/anime/${mal_id}`} key={mal_id} >
-                                <div className="bg-indigo-50 rounded-xl ml-7  pt-7 cursor-pointer mb-5">
+                                <div className="bg-indigo-50 rounded-xl mr-7  pt-7 cursor-pointer mb-5">
                                     <div className="w-72 flex justify-center items-center">
                                         <img src={image_url} width="250px" className="rounded-md" />
                                     </div>

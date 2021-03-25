@@ -19,9 +19,9 @@ const AnimeCharacters = ({ animeID }) => {
         <div className="py-24 ">
             {
                 char?.length !== 0 &&
-                <h1 className="text-4xl text-gray-500 pb-5 pl-1">Characters</h1>
+                <h1 className="text-4xl text-gray-500 pb-5">Characters</h1>
             }
-            <div className="flex overflow-auto w-full px-20">
+            <div className="flex flex-row overflow-auto w-full h-96 pr-20">
                 {
                     char &&
                     char.map(item => {
