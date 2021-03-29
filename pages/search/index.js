@@ -22,6 +22,15 @@ const AnimeSearch = () => {
 
     const { data, loading } = useFetch(`https://api.jikan.moe/v3/search/anime?q=${input}&page=1`)
 
+
+    if (data.status === 404) {
+        return (
+            <div>
+                <h1>{data.message}</h1>
+            </div>
+        )
+    }
+
     return (
         <>
             <div className="p-10 pl-16">

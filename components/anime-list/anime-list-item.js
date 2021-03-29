@@ -4,27 +4,31 @@ import NextPrev from './next-prev-btn';
 const AnimeList = ({ anime, setPage, prev }) => {
 
     return (
-        <div className="flex justify-center w-full pt-44">
+        <div className="flex justify-center pt-52">
             <div>
-                <div className="grid grid-cols-2 gap-4 " >
+                <div className="grid grid-cols-2 gap-10 " >
                     {
                         anime?.map((items) => {
                             const { mal_id, rank, title, image_url, episodes, start_date, end_date, score } = items;
                             return (
                                 <Link href="anime/[id]" as={`/anime/${mal_id}`} key={mal_id} >
-                                    <div className="bg-gray-200 rounded shadow-lg p-4 mb-8 w-132 cursor-pointer" >
-                                        <div className="flex relative">
-                                            <img src={image_url} alt={title} width="200px" className="rounded-lg" />
-                                            <h3 className=" btn w-16 text-center bg-purple-600 text-white h-10 absolute top-56 left-44 cursor-default">{score}</h3>
+                                    <div className="bg-gray-200 rounded shadow-inner p-4 mb-8 w-full cursor-pointer" >
+                                        <div className="flex ">
+                                            <img src={image_url} alt={title} width="240px" className="rounded-lg" />
                                             <div className="pl-10">
-                                                <h2 className="text-2xl pb-5">{title}</h2>
-                                                <h2>Episodes : {episodes}</h2>
-                                                <h2>Rank : {rank}</h2>
+                                                <h2 className="text-2xl font-light py-5 text-gray-700 ">{title}</h2>
+                                                <h3 className="text-3xl font-bold text-violet-700">{score === 0 ? "Unranked" : score}</h3>
+                                                <h2 className="pt-4">Rank : {rank}</h2>
+                                                <h2 className="py-4">Episodes : {episodes === null ? "Not Available" : episodes}</h2>
                                                 {
                                                     (start_date || end_date) &&
                                                     <h4>Aired : {start_date} to {end_date}</h4>
 
                                                 }
+                                                <div className="flex gap-10 pt-10">
+                                                    <button className="btn-next-prev"> <Link href='/shit'>Plan to watch </Link></button>
+                                                    <button className="btn-next-prev">Watched</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

@@ -1,7 +1,7 @@
 const Layout = ({ children }) => {
 
     return (
-        <div>
+        <div className="font-poppins">
             <main>
                 {children}
             </main>
