@@ -1,18 +1,20 @@
 import Link from 'next/link';
+import Bookmark from '../bookmark';
 import NextPrev from './next-prev-btn';
 
 const AnimeList = ({ anime, setPage, prev }) => {
 
     return (
-        <div className="flex justify-center pt-52">
+        <div className="flex justify-center pt-2 mx-48">
             <div>
                 <div className="grid grid-cols-2 gap-10 " >
                     {
-                        anime?.map((items) => {
+                        anime &&
+                        anime.map((items) => {
                             const { mal_id, rank, title, image_url, episodes, start_date, end_date, score } = items;
                             return (
                                 <Link href="anime/[id]" as={`/anime/${mal_id}`} key={mal_id} >
-                                    <div className="bg-gray-200 rounded shadow-inner p-4 mb-8 w-full cursor-pointer" >
+                                    <div className="bg-gray-200 rounded shadow-inner p-4 w-full cursor-pointer" >
                                         <div className="flex ">
                                             <img src={image_url} alt={title} width="240px" className="rounded-lg" />
                                             <div className="pl-10">
@@ -23,12 +25,8 @@ const AnimeList = ({ anime, setPage, prev }) => {
                                                 {
                                                     (start_date || end_date) &&
                                                     <h4>Aired : {start_date} to {end_date}</h4>
-
                                                 }
-                                                <div className="flex gap-10 pt-10">
-                                                    <button className="btn-next-prev"> <Link href='/shit'>Plan to watch </Link></button>
-                                                    <button className="btn-next-prev">Watched</button>
-                                                </div>
+                                                <Bookmark />
                                             </div>
                                         </div>
                                     </div>

@@ -48,7 +48,6 @@ const AnimeEps = ({ animeID }) => {
                             </div>
                         )
                     })
-
                 }
             </div>
         </div>

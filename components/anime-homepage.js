@@ -4,14 +4,14 @@ import SearchOptions from "./anime-list/search-category";
 import SearchInput from "./anime-list/search-input";
 
 import useFetch from '../hooks/useFetch'
+import useStore from "../store/store";
 
 const AnimeHomepage = () => {
+    const animeStore = useStore(state => state.setAnime);
+    const animeArray = useStore(state => state.anime);
 
     const [options, setOptions] = useState('bypopularity');
     const [page, setPage] = useState(1);
-    // const [anime, setAnime] = useState([]);
-
-
 
     const [changeURL, setChangeURL] = useState(true)
 
@@ -26,34 +26,20 @@ const AnimeHomepage = () => {
     changeURL ? URL = baseURL + optionsURl : URL = baseURL;
 
 
-    // useEffect(() => {
-    //     // const getAnime = async () => {
-    //     //     const x = await fetch(URL, {
-    //     //         header: 'Access-Control-Allow-Origin: *'
-    //     //     });
-    //     //     const res = await x.json();
-    //     //     setAnime(res);
-    //     // }
-
-    //     getAnime();
-
-    // }, [URL]);
-
     const { data, loading } = useFetch(URL);
+    animeStore(data.top)
+
 
 
     return (
-        <main className="w-full pr-10">
-            <div className="flex flex-col">
-                <div className="fixed z-10 bg-white w-full pt-11">
-                    <div className="flex flex-col items-start pl-11">
-                        <SearchInput />
-                        <SearchOptions setOptions={setOptions} setPage={setPage} setChangeURL={setChangeURL} />
-                    </div>
-                </div>
-                <AnimeList anime={data?.top} setPage={setPage} prev={prev} />
+        <main className="w-full">
+            <div className="flex flex-col items-start pt-20 mx-48">
+                {/* <div className="fixed z-10 bg-white w-full pt-11" > */}
+                <SearchOptions setOptions={setOptions} setPage={setPage} setChangeURL={setChangeURL} />
+                {/* </div> */}
             </div>
-        </main>
+            <AnimeList anime={animeArray} setPage={setPage} prev={prev} />
+        </main >
     )
 };
 

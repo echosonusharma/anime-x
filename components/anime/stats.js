@@ -106,7 +106,7 @@ const Stats = ({ animeID }) => {
 
 
     return (
-        <div className="w-5/12 bg-indigo-50 p-5 rounded-xl flex justify-center items-center">
+        <div className="w-3/6 bg-gray-100 p-5 rounded-xl flex justify-center items-center">
             <Bar
                 data={chart}
                 options={chartsOptions} />

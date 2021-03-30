@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 
 const Reviews = ({ animeID }) => {
@@ -59,7 +59,6 @@ const Reviews = ({ animeID }) => {
                                     {content}
                                 </ReadMore>
                             </div>
-
                         </div>
                     )
                 })

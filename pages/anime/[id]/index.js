@@ -1,18 +1,9 @@
-import Link from "next/link"
 import Anime from "../../../components/anime";
 
 const AnimePage = ({ animeInfo }) => {
 
     return (
-        <>
-            <div className="pl-16 pt-5">
-                <button className="btn bg-indigo-900 text-white">
-                    <Link href='/' className="p-10">
-                        Home </Link>
-                </button>
-            </div>
-            <Anime animeInfo={animeInfo} />
-        </>
+        <Anime animeInfo={animeInfo} />
     )
 };
 
