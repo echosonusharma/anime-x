@@ -32,7 +32,7 @@ const AnimeCharacters = ({ animeID }) => {
                         return (
                             <div key={mal_id} >
                                 <div className="w-64">
-                                    <Image src={image_url} alt={name} width={200} height={300} className="rounded-md" />
+                                    <Image src={image_url} alt={name} width={200} height={300} quality={30} className="rounded-md" />
                                 </div>
                                 <h1 className='py-1 text-lg font-medium text-gray-700'>{name.split(/\s/).reverse().join(" ").replace(",", '')}</h1>
                                 <h1 className="pb-2 text-lg">Role: {role}</h1>

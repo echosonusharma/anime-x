@@ -5,18 +5,22 @@ import Stats from "./anime/stats";
 import Link from 'next/link';
 import Reviews from "./anime/reviews";
 import Bookmark from "./bookmark";
-import Image from 'next/image'
+import Image from 'next/image';
+
+import Meta from '../components/meta';
 
 const Anime = ({ animeInfo }) => {
     const { mal_id, image_url, title, title_japanese, type, episodes, status, aired, duration, rating, score, synopsis, studios, genres } = animeInfo;
 
+    const metaTitle = `Anime | ${title}`;
     return (
         <div className="mx-36">
+            <Meta title={metaTitle} />
             <div>
                 <div className="flex mt-20 gap-5">
                     <div className=" flex gap-10 w-3/5 pb-5  bg-gray-100 rounded-xl">
                         <div className="pl-10 py-10">
-                            <Image src={image_url} width={240} height={380} className="rounded-lg" />
+                            <Image src={image_url} width={240} height={380} quality={80} className="rounded-lg" />
                         </div>
                         <div className="text-gray-600 text-lg pt-10">
                             <div className="flex flex-col gap-2">

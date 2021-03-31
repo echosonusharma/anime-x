@@ -7,7 +7,7 @@ const Navbar = () => {
     return (
         <div className="mx-48 flex items-center justify-between gap-10 pt-6">
             <div className="flex gap-12 w-full">
-                <h1 className="text-5xl font-bold"><Link href='/'>Anime</Link></h1>
+                <h1 className="bg-clip-text text-transparent bg-gradient-to-r from-gray-700 to-indigo-500 text-5xl font-black"><Link href='/'>Anime</Link></h1>
                 <ul className="flex gap-6 items-center text-lg">
                     <li>Plan To Watch</li>
                     <li>Watched</li>

@@ -48,7 +48,7 @@ const Reviews = ({ animeID }) => {
                             <div className="flex gap-4 items-center pb-5">
                                 <Image
                                     className="rounded-full w-28 h-28 p-3 object-cover"
-                                    src={reviewer.image_url} width={80} height={80} />
+                                    src={reviewer.image_url} width={80} height={80} quality={30} />
                                 <div>
                                     <a href={reviewer.url} target="_blank"><h1>{reviewer.username}</h1></a>
                                     <h1>{date?.slice(0, -15)}</h1>

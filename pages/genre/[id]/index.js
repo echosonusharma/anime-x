@@ -1,5 +1,6 @@
 import Bookmark from '../../../components/bookmark';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const index = ({ genreRes }) => {
 
@@ -14,7 +15,7 @@ const index = ({ genreRes }) => {
                                 <div className="bg-gray-200 rounded shadow-lg p-4 mb-8 w-full cursor-pointer" >
                                     <div className="flex " >
                                         <div className="w-64">
-                                            <img src={image_url} alt={title} width="230px" className="rounded-lg" />
+                                            <Image src={image_url} alt={title} width={230} height={360} quality={30} className="rounded-lg" />
                                         </div>
                                         <div className="pl-10">
                                             <h2 className="text-2xl py-5">{title}</h2>
@@ -42,9 +43,7 @@ export default index;
 
 
 export const getServerSideProps = async (context) => {
-    const res = await fetch(`https://api.jikan.moe/v3/genre/anime/${context.params.id}/1`, {
-        header: 'Access-Control-Allow-Origin: *'
-    });
+    const res = await fetch(`https://api.jikan.moe/v3/genre/anime/${context.params.id}/1`);
     const genreRes = await res.json()
 
     return {

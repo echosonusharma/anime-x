@@ -1,14 +1,10 @@
 import useStore from '../../store/store';
 import Link from 'next/link';
-import useFetch from '../../hooks/useFetch'
+import Image from 'next/image';
 import Bookmark from '../../components/bookmark';
 
 const AnimeSearch = () => {
-
-    const input = useStore(state => state.input);
-
-    const { data, loading } = useFetch(`https://api.jikan.moe/v3/search/anime?q=${input}&page=1`)
-
+    const data = useStore(state => state.searchResult)
 
     if (data.status === 404) {
         return (
@@ -17,6 +13,14 @@ const AnimeSearch = () => {
             </div>
         )
     }
+    if (data.status >= 400) {
+        return (
+            <div>
+                <h1>Unable to fetch data</h1>
+            </div>
+        )
+    }
+
 
     return (
         <div className="flex justify-center pt-10 mx-40">
@@ -28,7 +32,7 @@ const AnimeSearch = () => {
                             <Link href="anime/[id]" as={`/anime/${mal_id}`} key={mal_id} >
                                 <div className="bg-gray-200 rounded shadow-lg p-4 mb-8 w-full cursor-pointer" >
                                     <div className="flex gap-1 ">
-                                        <img src={image_url} alt={title} width="250px" className="rounded-lg" />
+                                        <Image src={image_url} alt={title} width={230} height={360} quality={30} className="rounded-lg" />
                                         <div className="pl-10">
                                             <h2 className="text-2xl pb-5">{title}</h2>
                                             <h2>Episodes : {episodes}</h2>
