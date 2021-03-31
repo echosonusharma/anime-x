@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from 'next/link';
+import Image from 'next/image';
 
 
 const AnimeRecommendations = ({ animeID }) => {
@@ -32,9 +33,9 @@ const AnimeRecommendations = ({ animeID }) => {
                             <Link href="[id]" as={`/anime/${mal_id}`} key={mal_id} >
                                 <div className="bg-gray-100 rounded-xl mr-7  pt-7 cursor-pointer mb-5">
                                     <div className="w-72 flex justify-center items-center">
-                                        <img src={image_url} width="250px" className="rounded-md" />
+                                        <Image src={image_url} width={250} height={380} className="rounded-md" />
                                     </div>
-                                    <h1 className="text-center mt-3 text-lg font-medium px-4 text-gray-600">{title}</h1>
+                                    <h1 className="text-center mt-3 text-base font-medium px-4 text-gray-600">{title}</h1>
                                 </div>
                             </Link>
                         )

@@ -1,4 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import Image from 'next/image';
+
+
 
 const AnimeCharacters = ({ animeID }) => {
     const [char, setChar] = useState(null);
@@ -21,7 +24,7 @@ const AnimeCharacters = ({ animeID }) => {
                 char?.length !== 0 &&
                 <h1 className="text-4xl text-gray-500 pb-5">Characters</h1>
             }
-            <div className="flex flex-row overflow-auto w-full h-96 pr-20">
+            <div className="flex flex-row overflow-auto w-full h-108 pr-20">
                 {
                     char &&
                     char.map(item => {
@@ -29,7 +32,7 @@ const AnimeCharacters = ({ animeID }) => {
                         return (
                             <div key={mal_id} >
                                 <div className="w-64">
-                                    <img src={image_url} width="170px" className="rounded-md" />
+                                    <Image src={image_url} alt={name} width={200} height={300} className="rounded-md" />
                                 </div>
                                 <h1 className='py-1 text-lg font-medium text-gray-700'>{name.split(/\s/).reverse().join(" ").replace(",", '')}</h1>
                                 <h1 className="pb-2 text-lg">Role: {role}</h1>

@@ -13,7 +13,7 @@ const SearchInput = () => {
                     placeholder="Search Anime"
                     onInput={(e) => input(e.target.value.trim().replace(/\s+/g, '&'))}
                     className="p-2 pl-5 border-gray-900 border-2 rounded-full focus:outline-none focus:border-gray-600" />
-                <button className="btn-next-prev"><Link href="/search"> Search</Link></button>
+                <button className="btn-sty-1"><Link href="/search"> Search</Link></button>
             </div>
         </div>
     )

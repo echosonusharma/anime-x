@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import Image from 'next/image';
 
 const Reviews = ({ animeID }) => {
 
@@ -26,7 +26,7 @@ const Reviews = ({ animeID }) => {
             <div className="text-sm" >
                 { resultingString}
                 <span
-                    className="text-blue-700 cursor-pointer"
+                    className="text-violet-700 cursor-pointer"
                     onClick={() => setIsTruncated(!isTruncated)}>
                     {isTruncated ? " ...Read more" : " Read less"}</span >
             </div>
@@ -45,10 +45,10 @@ const Reviews = ({ animeID }) => {
                     const { mal_id, date, reviewer, content } = item;
                     return (
                         <div key={mal_id} className=" rounded-lg bg-indigo-100  p-4 mb-10 w-full">
-                            <div className="flex gap-4 items-center">
-                                <img
+                            <div className="flex gap-4 items-center pb-5">
+                                <Image
                                     className="rounded-full w-28 h-28 p-3 object-cover"
-                                    src={reviewer.image_url} />
+                                    src={reviewer.image_url} width={80} height={80} />
                                 <div>
                                     <a href={reviewer.url} target="_blank"><h1>{reviewer.username}</h1></a>
                                     <h1>{date?.slice(0, -15)}</h1>

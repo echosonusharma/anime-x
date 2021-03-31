@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import AnimeList from "./anime-list/anime-list-item";
 import SearchOptions from "./anime-list/search-category";
-import SearchInput from "./anime-list/search-input";
 
 import useFetch from '../hooks/useFetch'
 import useStore from "../store/store";
@@ -34,9 +33,7 @@ const AnimeHomepage = () => {
     return (
         <main className="w-full">
             <div className="flex flex-col items-start pt-20 mx-48">
-                {/* <div className="fixed z-10 bg-white w-full pt-11" > */}
                 <SearchOptions setOptions={setOptions} setPage={setPage} setChangeURL={setChangeURL} />
-                {/* </div> */}
             </div>
             <AnimeList anime={animeArray} setPage={setPage} prev={prev} />
         </main >

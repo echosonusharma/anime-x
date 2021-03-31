@@ -4,11 +4,11 @@ const NextPrev = ({ setPage, prev }) => {
             <div className="flex gap-4 justify-center pt-8 pb-4">
                 <button
                     onClick={() => prev()}
-                    className="btn-next-prev"
+                    className="btn-sty-1"
                 >Previous</button>
                 <button
                     onClick={() => setPage(c => c + 1)}
-                    className="btn-next-prev"
+                    className="btn-sty-1"
                 >Next</button>
             </div>
         </div>

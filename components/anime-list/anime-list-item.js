@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import Bookmark from '../bookmark';
 import NextPrev from './next-prev-btn';
+import Image from 'next/image';
+
+
 
 const AnimeList = ({ anime, setPage, prev }) => {
 
@@ -16,7 +19,7 @@ const AnimeList = ({ anime, setPage, prev }) => {
                                 <Link href="anime/[id]" as={`/anime/${mal_id}`} key={mal_id} >
                                     <div className="bg-gray-200 rounded shadow-inner p-4 w-full cursor-pointer" >
                                         <div className="flex ">
-                                            <img src={image_url} alt={title} width="240px" className="rounded-lg" />
+                                            <Image src={image_url} alt={title} width={225} height={350} className="rounded-lg object-cover" />
                                             <div className="pl-10">
                                                 <h2 className="text-2xl font-light py-5 text-gray-700 ">{title}</h2>
                                                 <h3 className="text-3xl font-bold text-violet-700">{score === 0 ? "Unranked" : score}</h3>
