@@ -1,14 +1,12 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 const colors = require('tailwindcss/colors');
-
-
-
 
 module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: false, // Or 'media' or 'class'
   theme: {
     fontFamily: {
-      'poppins': ['Poppins', 'sans-serif'],
+      poppins: ['Poppins', 'sans-serif'],
     },
     colors: {
       transparent: 'transparent',
@@ -21,27 +19,28 @@ module.exports = {
       yellow: colors.amber,
       violet: colors.violet,
       purple: colors.purple,
-      'light-dark': '#4D516D'
+      green: colors.green,
+      'light-dark': '#4D516D',
     },
     extend: {
       width: {
-        '108': '27rem',
-        '120': '30rem',
-        '132': '33rem',
-        '144': '36rem',
-        '156': '38rem'
+        108: '27rem',
+        120: '30rem',
+        132: '33rem',
+        144: '36rem',
+        156: '38rem',
       },
       height: {
-        '108': '27rem',
-        '120': '30rem',
-        '132': '33rem',
-        '144': '36rem',
-        '156': '38rem'
+        108: '27rem',
+        120: '30rem',
+        132: '33rem',
+        144: '36rem',
+        156: '38rem',
       },
       variants: {
         extend: {},
       },
       plugins: [],
-    }
-  }
-}
+    },
+  },
+};

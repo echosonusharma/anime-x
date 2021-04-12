@@ -1,23 +1,19 @@
-import Anime from "../../../components/anime";
+import React from 'react';
+import Anime from '../../../components/anime';
 
-const AnimePage = ({ animeInfo }) => {
-
-    return (
-        <Anime animeInfo={animeInfo} />
-    )
-};
+const AnimePage = ({ animeInfo }) => (
+  <Anime animeInfo={animeInfo} />
+);
 
 export default AnimePage;
 
-
 export const getServerSideProps = async (context) => {
-    const res = await fetch(`https://api.jikan.moe/v3/anime/${context.params.id}`)
-    const animeInfo = await res.json()
+  const res = await fetch(`https://animex-backend.herokuapp.com/api/anime/info/${context.params.id}`);
+  const animeInfo = await res.json();
 
-    return {
-        props: {
-            animeInfo
-        }
-    }
-}
-
+  return {
+    props: {
+      animeInfo,
+    },
+  };
+};

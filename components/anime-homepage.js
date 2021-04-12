@@ -1,43 +1,55 @@
-import { useState } from "react";
-import AnimeList from "./anime-list/anime-list-item";
-import SearchOptions from "./anime-list/search-category";
-
-import useFetch from '../hooks/useFetch'
-import useStore from "../store/store";
+import React, { useState } from 'react';
+import Image from 'next/image';
+import AnimeList from './anime-list/anime-list-item';
+import SearchCategory from './anime-list/search-category';
+import useFetch from '../hooks/useFetch';
+import useStore from '../store/store';
 
 const AnimeHomepage = () => {
-    const animeStore = useStore(state => state.setAnime);
-    const animeArray = useStore(state => state.anime);
+  const animeStore = useStore((state) => state.setAnime);
+  const animeArray = useStore((state) => state.anime);
 
-    const [options, setOptions] = useState('bypopularity');
-    const [page, setPage] = useState(1);
+  const [options, setOptions] = useState('bypopularity');
+  const [page, setPage] = useState(1);
 
-    const [changeURL, setChangeURL] = useState(true)
+  const [changeURL, setChangeURL] = useState(true);
 
-    const prev = () => {
-        page === 1 ? setPage(page) : setPage(page - 1)
-    };
+  const prev = () => {
+    if (page === 1) {
+      return setPage(page);
+    }
+    return setPage(page - 1);
+  };
 
-    const baseURL = `https://api.jikan.moe/v3/top/anime/${page}`
-    const optionsURl = `/${options}`;
+  const baseURL = `https://animex-backend.herokuapp.com/api/anime/top/${page}`;
+  const optionsURl = `/${options}`;
 
-    let URL = "";
-    changeURL ? URL = baseURL + optionsURl : URL = baseURL;
+  let URL = '';
+  // eslint-disable-next-line no-unused-expressions
+  changeURL ? URL = baseURL + optionsURl : URL = baseURL;
 
+  const { data, loading } = useFetch(URL);
+  animeStore(data?.top);
 
-    const { data, loading } = useFetch(URL);
-    animeStore(data.top)
-
-
-
+  if (loading) {
     return (
-        <main className="w-full">
-            <div className="flex flex-col items-start pt-20 mx-48">
-                <SearchOptions setOptions={setOptions} setPage={setPage} setChangeURL={setChangeURL} />
-            </div>
-            <AnimeList anime={animeArray} setPage={setPage} prev={prev} />
-        </main >
-    )
+      <div className="flex justify-center items-center pt-56">
+        <div className="flex gap-5 items-center">
+          <Image src="/static/loading.svg" height={50} width={50} className="animate-spin" priority="eager" />
+          <h1 className="text-3xl text-gray-500 font-medium">Loading...</h1>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <main className="w-full">
+      <div className="flex lg:flex-col lg:items-start pt-5 lg:pt-20 mx-5 lg:mx-48">
+        <SearchCategory setOptions={setOptions} setPage={setPage} setChangeURL={setChangeURL} />
+      </div>
+      <AnimeList anime={animeArray} setPage={setPage} prev={prev} />
+    </main>
+  );
 };
 
 export default AnimeHomepage;

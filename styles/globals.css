@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -10,11 +10,15 @@
   @apply font-bold py-2 px-4 rounded text-sm focus:outline-none;
 }
 .btn-select {
-  @apply font-bold py-2 px-4 rounded-2xl text-xs focus:outline-none;
+  @apply font-bold py-2 px-4 rounded-2xl text-xs  focus:outline-none;
 }
 
 .btn-sty-1 {
   @apply bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-full focus:outline-none;
+}
+
+.btn-sty-2 {
+  @apply bg-green-400 hover:bg-green-500 text-gray-800 font-bold py-2 px-4 rounded-full focus:outline-none;
 }
 
 .btn-indigo {
