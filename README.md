@@ -1,5 +1,3 @@
-<!-- PROJECT SHIELDS -->
-
 <p align="center">
   <a href="https://github.com/echosonusharma/anime-x">
     <img src="public/static/logo.png" alt="Logo" width="100" height="80">
@@ -21,6 +19,7 @@
   </p>
 </p>
 
+<!-- PROJECT SHIELDS -->
 <div align="center">
 
 [![Forks][forks-shield]][forks-url]
@@ -35,9 +34,7 @@
 
 ## About The Project
 
-<a href="https://anime-x-echosonusharma.vercel.app" target="blank" >
-<img src=" https://res.cloudinary.com/dnzeogrsh/image/upload/v1618652879/anime-x/anime-x-anime_lvu9i5.jpg" width="600" />
-</a>
+[![Product Name Screen Shot][product-screenshot]](https://anime-x-echosonusharma.vercel.app)
 
 Anime-x gives you a place where you can keep track of all your anime in one place. you can
 float through the option of most popular anime to currently airing and much more! It give you
@@ -56,11 +53,15 @@ Features :star2: :
 
 Current issues :warning: :
 
-- lacks responsiveness (in work!)
-
 - Database issues in the backend with serializing user using oAuth :boom:
 
+- lacks responsiveness (working on it!)
+
 - Unregulated image size :expressionless:
+
+Some Optimization :relaxed: :
+
+- Using image Optimization from next to lazy load images and quality cutoff to save bandwidth.
 
 ### Built With
 
@@ -91,9 +92,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+[Sonu Sharma](https://echosonusharma.github.io/sonusharma)
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/echosonusharma/anime-x](https://github.com/echosonusharma/anime-x)
 
 <!-- ACKNOWLEDGEMENTS -->
 
@@ -114,3 +115,4 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 [license-url]: https://github.com/echosonusharma/anime-x
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/echosonusharma
+[product-screenshot]: https://res.cloudinary.com/dnzeogrsh/image/upload/v1618664520/anime-x/Annotation_2021-04-17_182510_w0nasn.jpg
