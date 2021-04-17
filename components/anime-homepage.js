@@ -21,12 +21,12 @@ const AnimeHomepage = () => {
     return setPage(page - 1);
   };
 
-  const baseURL = `https://animex-backend.herokuapp.com/api/anime/top/${page}`;
-  const optionsURl = `/${options}`;
+  const baseURL = `https://animex-backend.herokuapp.com/api/anime/all/${page}`;
+  const optionsURl = `https://animex-backend.herokuapp.com/api/anime/top/${page}/${options}`;
 
   let URL = '';
   // eslint-disable-next-line no-unused-expressions
-  changeURL ? URL = baseURL + optionsURl : URL = baseURL;
+  changeURL ? URL = optionsURl : URL = baseURL;
 
   const { data, loading } = useFetch(URL);
   animeStore(data?.top);
