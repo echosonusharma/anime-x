@@ -1,34 +1,109 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<!-- PROJECT SHIELDS -->
+<div align="center">
 
-## Getting Started
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-First, run the development server:
+</div>
+<p align="center">
+  <a href="https://github.com/echosonusharma/anime-x">
+    <img src="public/static/logo.png" alt="Logo" width="100" height="80">
+  </a>
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+  <h2 align="center"><b>ANIME-X</b></h2>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+  <p align="center">
+   A place where you can save all you favorite anime.
+    <br />
+    <a href="https://github.com/echosonusharma/anime-x"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/echosonusharma/anime-x">View Demo</a>
+    ·
+    <a href="https://github.com/echosonusharma/anime-x/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/echosonusharma/anime-x/issues">Request Feature</a>
+  </p>
+</p>
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+<!-- ABOUT THE PROJECT -->
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## About The Project
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+[![Product Name Screen Shot][product-screenshot]](https://anime-x-echosonusharma.vercel.app)
 
-## Learn More
+This project was something that I had in my mind for quite a long, even before I was into web development. I have been watching anime from middle school and after literally watching hundreds of them over the years, it was really hard to keep track of what anime I've watched and what I'd like to save to watch in the the future and all that. I did found some solutions to that but either they were too clunky or slow or just were bad in general. So, now that I am capable of utilizing such powerful tools like react and express to my will, I decided to start this project.
 
-To learn more about Next.js, take a look at the following resources:
+The project is in build process, so it does have issues, code that's frequently being refactored,
+some repetition, hopefully it will be more refined in the future.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Features :star2: :
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Get all details about a anime with characters, episodes, stats, recommendation and reviews.
 
-## Deploy on Vercel
+- Search by genre.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Categorize your favorite anime the way you like (:construction: in work).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Current issues :warning: :
+
+- Database issues in the backend with serializing user using oAuth :boom:
+
+- Unregulated image size :expressionless:
+
+### Built With
+
+This Project is built using next.js (A framework build on top of react.js) and for css
+it uses tailwindCSS.
+
+<div>
+<a href="https://nextjs.org" target="blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg" alt="nc2R8YK2xu" height="50" width="50"/></a>
+<a href="https://https://tailwindcss.com" target="blank"><img src="https://raw.githubusercontent.com/aniftyco/awesome-tailwindcss/master/assets/logo.svg" alt="nc2R8YK2xu" height="50" width="50"/></a>
+</div>
+
+### Packages
+
+- Zustand
+- Chart.js
+- react-scroll
+- reactjs-popup
+- eslint (airbnb config)
+- prettier
+
+<!-- LICENSE -->
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+<!-- CONTACT -->
+
+## Contact
+
+Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+
+Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## Acknowledgements
+
+- [Flaticon](https://www.flaticon.com/)
+- [Zustand](https://github.com/pmndrs/zustand)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+
+[forks-shield]: https://img.shields.io/github/forks/echosonusharma/anime-x?style=for-the-badge
+[forks-url]: https://github.com/echosonusharma/anime-x/network/members
+[stars-shield]: https://img.shields.io/github/stars/echosonusharma/anime-x?style=for-the-badge
+[stars-url]: https://github.com/echosonusharma/anime-x/stargazers
+[issues-shield]: https://img.shields.io/github/issues/echosonusharma/anime-x?style=for-the-badge
+[issues-url]: https://github.com/echosonusharma/anime-x/issues
+[license-shield]: https://img.shields.io/github/license/echosonusharma/anime-x?style=for-the-badge
+[license-url]: https://github.com/echosonusharma/anime-x
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/echosonusharma
+[product-screenshot]: https://res.cloudinary.com/dnzeogrsh/image/upload/v1618652879/anime-x/anime-x-anime_lvu9i5.jpg
