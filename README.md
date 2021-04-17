@@ -36,6 +36,10 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://anime-x-echosonusharma.vercel.app)
 
+:warning: Backend of this application is hosted on a free tier plan on heroku so it goes
+through a cold start. so, initial loading might be slow. Please be patient.
+
+<br />
 Anime-x gives you a place where you can keep track of all your anime in one place. you can
 float through the option of most popular anime to currently airing and much more! It give you
 all the stats about a anime from a small synopsis about the anime to all the characters that are in the anime, it also give you a graphical representation of stats of how the anime is rated by thousands of viewers and some anime recommendations based on the current anime with reviews.
