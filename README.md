@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/echosonusharma/anime-x">
+  <a href="https://http://anime-x-echosonusharma.vercel.app">
     <img src="public/static/logo.png" alt="Logo" width="100" height="80">
   </a>
 
@@ -9,7 +9,6 @@
    A place where you can save all you favorite anime.
     <br />
     <a href="https://github.com/echosonusharma/anime-x"><strong>Explore the docs »</strong></a>
-    <br />
     <br />
     <a href="https://github.com/echosonusharma/anime-x">View Demo</a>
     ·
@@ -77,6 +76,10 @@ This Project is built using [next.js](https://nextjs.org) (A framework build on 
 <a href="https://https://tailwindcss.com" target="blank"><img src="https://raw.githubusercontent.com/aniftyco/awesome-tailwindcss/master/assets/logo.svg" alt="nc2R8YK2xu" height="50" width="50"/></a>
 </div>
 
+### Server side
+
+[anime-x-backend](https://github.com/echosonusharma/animeX-backend) hosted on heroku
+
 ### Packages
 
 - Zustand
@@ -97,8 +100,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## Contact
 
 [Sonu Sharma](https://echosonusharma.github.io/sonusharma)
-
-Project Link: [https://github.com/echosonusharma/anime-x](https://github.com/echosonusharma/anime-x)
 
 <!-- ACKNOWLEDGEMENTS -->
 
