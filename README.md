@@ -10,7 +10,7 @@
     <br />
     <a href="https://github.com/echosonusharma/anime-x"><strong>Explore the docs »</strong></a>
     <br />
-    <a href="https://github.com/echosonusharma/anime-x">View Demo</a>
+    <a href="https://http://anime-x-echosonusharma.vercel.app">View Demo</a>
     ·
     <a href="https://github.com/echosonusharma/anime-x/issues">Report Bug</a>
     ·
